@@ -1,2 +1,2 @@
-# debiaisngtools
+# Debiasing tools
 Utils collections for research

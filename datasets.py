@@ -26,8 +26,8 @@ class CMNIST_ZWDataset(Dataset):
         return len(self.data)
 
     def __getitem__(self, index):
-        label = torch.LongTensor([int(self.data[index].split('_')[-2])])
-        bias = torch.LongTensor([int(self.data[index].split('_')[-1].split('.')[0])])
+        label = torch.tensor(int(self.data[index].split('_')[-2]))
+        bias = torch.tensor(int(self.data[index].split('_')[-1].split('.')[0]))
         image = Image.open(self.data[index]).convert('RGB')
         image = self.transform(image)
         

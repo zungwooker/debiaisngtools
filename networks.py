@@ -6,7 +6,7 @@ class MLP(nn.Module):
         super().__init__()
         assert num_layers == len(hidden_dim), "Check num_layers and hidden_dim."
             
-        layers = []
+        layers = [nn.Flatten()]
         d_prev = in_features
         for dim in hidden_dim:
             layers += [nn.Linear(d_prev, dim), nn.ReLU()]
